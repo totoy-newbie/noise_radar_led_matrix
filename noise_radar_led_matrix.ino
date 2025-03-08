@@ -6,6 +6,7 @@ unsigned long lastTickTime;
 
 void setup() {
   DebugInit();
+  DisplayInit();
   lastTickTime = millis();
 }
 
@@ -14,6 +15,7 @@ void loop() {
 
   if (msNow - lastTickTime >= UPDATE_INTERVAL) {
     DebugCycle();
+    DisplayCycle();
     lastTickTime = msNow;
   }
 }
